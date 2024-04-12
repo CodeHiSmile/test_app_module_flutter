@@ -24,9 +24,9 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 34
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 21
     }
 }
 
