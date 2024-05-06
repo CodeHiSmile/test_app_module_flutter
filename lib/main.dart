@@ -1,6 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:test_app_module_flutter/fire_base_options.dart';
+import 'package:test_app_module_flutter/fire_store_manager.dart';
 
-void main() => runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -103,10 +112,30 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: saveToFirebase,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  void saveToFirebase() async {
+    try {
+      List<int> listData = [3, 4, 5, 76, 7, 4, 3, 3];
+      final dataConvertString = listData
+          .toString()
+          .replaceAll("[", '')
+          .replaceAll("]", "")
+          .toString();
+
+      final fireStorageService = FireStorageService();
+      await fireStorageService.saveLog(dataConvertString);
+
+      if (context.mounted) {
+        print("Lưu dữ liệu thành công");
+      }
+    } catch (e) {
+      print("Lỗi thêm data");
+    }
   }
 }
