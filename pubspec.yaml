@@ -41,11 +41,11 @@ dependencies:
   firebase_core: ^2.9.0
   firebase_messaging: ^14.4.0
   cloud_firestore:
-#  flutter_local_notifications: ^13.0.0
-#  firebase_database: 10.0.16
-#  firebase_auth: 4.3.0
-#  firebase_analytics: 10.1.6
-#  firebase_dynamic_links:
+  flutter_local_notifications: ^13.0.0
+  firebase_database: 10.0.16
+  firebase_auth: 4.3.0
+  firebase_analytics: 10.1.6
+  firebase_dynamic_links:
   google_fonts: ^4.0.1
   dio: ^4.0.6
   connectivity_plus: ^3.0.4
