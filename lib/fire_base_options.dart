@@ -20,10 +20,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-              'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -52,5 +49,14 @@ class DefaultFirebaseOptions {
     messagingSenderId: '',
     projectId: 'app-module-flutter',
     storageBucket: 'app-module-flutter.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyAGduweHUUiceHRBpsNzK_rVWOg8rx7OmQ',
+    appId: '1:119680581421:ios:1e352cd60a1fb73b05dda4',
+    messagingSenderId: '119680581421',
+    projectId: 'app-module-flutter',
+    storageBucket: 'app-module-flutter.appspot.com',
+    iosBundleId: 'com.example.testAppModuleFlutter',
   );
 }

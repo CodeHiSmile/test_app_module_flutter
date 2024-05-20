@@ -43,7 +43,7 @@ dependencies:
   cloud_firestore:
   flutter_local_notifications: ^13.0.0
   firebase_database: 10.0.16
-  firebase_auth: 4.3.0
+  firebase_auth:
   firebase_analytics: 10.1.6
   firebase_dynamic_links:
   google_fonts: ^4.0.1
